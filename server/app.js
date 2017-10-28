@@ -8,7 +8,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const cors = require('cors');
 
-const fbAuth = require('./routes/auth/index')
+const fbAuth = require('./routes/auth/fbauth')
+const auth = require('./routes/auth/auth')
 const todos = require('./routes/api/todo')
 
 var app = express();
@@ -36,6 +37,7 @@ app.use(cors())
 
 app.use('/api', todos)
 app.use('/fbauth', fbAuth)
+app.use('/auth', auth)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
