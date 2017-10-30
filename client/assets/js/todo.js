@@ -59,7 +59,7 @@ Vue.component('list-of-todo', {
             // return done 
             // console.log('====================================');
             done.done = !done.done
-            axios.put(`http://localhost:3000/api/id?id=${done._id}`,{
+            axios.put(`http://localhost:3000/api/${done._id}`,{
                 user_id:done.user_id,
                 todo_list:done.todo_list,
                 done: done.done

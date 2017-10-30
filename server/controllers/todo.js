@@ -47,7 +47,7 @@ class TODO {
             })
     }
     static update(req, res){
-        Todo.findById(req.query._id)
+        Todo.findById(req.params.id)
             .then(list=>{
                 if(list){
                     if(list.user_id === req.body.user_id){
@@ -77,7 +77,7 @@ class TODO {
     }
 
     static deleteById(req, res){
-        Todo.findById(req.params.id)
+        Todo.findById(req.query.id)
             .then(list=>{
                 if(list){
                     if(list.user_id === req.body.user_id){

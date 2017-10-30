@@ -10,7 +10,7 @@ router.get('/:id', ToDo.findById)
 
 router.post('/', ToDo.create)
 
-router.put('/id', ToDo.update)
+router.put('/:id', ToDo.update)
 
 router.delete('/:id', ToDo.deleteById)
 

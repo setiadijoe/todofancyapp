@@ -14,7 +14,7 @@ const todos = require('./routes/api/todo')
 
 var app = express();
 
-mongoose.connect(process.env.MONGO_URL, (err) => {
+mongoose.connection.openUri(process.env.MONGO_URL, (err) => {
   if (err) {
     console.log('database unconnect');
   } else {
