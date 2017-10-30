@@ -27,7 +27,7 @@ class TODO {
     }
 
     static findByUserId(req, res){
-        Todo.find({user_id:req.params.user_id})
+        Todo.find({user_id:req.query.user_id})
             .then(list=>{
                 res.send(list).status(200)
             })
@@ -46,9 +46,8 @@ class TODO {
                 res.send(err).status(400)
             })
     }
-
     static update(req, res){
-        Todo.findById(req.params.id)
+        Todo.findById(req.query._id)
             .then(list=>{
                 if(list){
                     if(list.user_id === req.body.user_id){
